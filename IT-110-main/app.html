@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYRIN Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prisma:wght@400&display=swap" rel="stylesheet">
+    <!-- Offline Iconify Icons -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta name="description" content="LYRIN Translator - Single Page Application for language translation.">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="top-icons">
+                <div class="sidebar-icon active" title="Language Translator">
+                    <iconify-icon icon="mdi:translate"></iconify-icon>
+                </div>
+                <div class="sidebar-icon" title="Language Learning">
+                    <iconify-icon icon="mdi:school"></iconify-icon>
+                </div>
+                <div class="sidebar-icon" title="Dictionary">
+                    <iconify-icon icon="mdi:book-open-variant"></iconify-icon>
+                </div>
+                <div class="sidebar-icon" title="Quiz Me">
+                    <iconify-icon icon="mdi:quiz"></iconify-icon>
+                </div>
+                <div class="sidebar-icon" title="Quiz Me">
+                    <a href="/index.html"><iconify-icon icon="mdi:quiz"></iconify-icon></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <img class="logo" src="/assets/images/Heading - Copy.png - Copy.png" alt="">
+
+            <!-- Translation Container (Main App) -->
+            <section id="section-translator" class="translation-container">
+                <div class="translation-box">
+                    <!-- Source Language Panel -->
+                    <div class="language-panel">
+                        <div class="language-selector">
+                            <select id="sourceLanguage" class="language-dropdown">
+                                <option value="en">English</option>
+                                <option value="fil">Filipino</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="zh">Chinese</option>
+                                <option value="ru">Russian</option>
+                                <option value="ar">Arabic</option>
+                                <option value="hi">Hindi</option>
+                                <option value="id">Indonesian</option>
+                                <option value="th">Thai</option>
+                                <option value="vi">Vietnamese</option>
+                                <option value="nl">Dutch</option>
+                                <option value="el">Greek</option>
+                                <option value="tr">Turkish</option>
+                                <option value="sv">Swedish</option>
+                            </select>
+                        </div>
+                        <div class="text-area-container">
+                            <div class="text-area-wrapper">
+                                <textarea 
+                                    id="sourceText" 
+                                    class="text-area" 
+                                    placeholder="Type here..."
+                                    rows="8"
+                                ></textarea>
+                                <div class="text-controls">
+                                    <button id="sourceMic" class="control-btn mic-btn" title="Voice Input">
+                                        <iconify-icon icon="mdi:microphone"></iconify-icon>
+                                    </button>
+                                    <button id="sourceSpeaker" class="control-btn speaker-btn" title="Listen">
+                                        <iconify-icon icon="mdi:volume-high"></iconify-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Swap Button -->
+                    <div class="swap-container">
+                        <button id="swapButton" class="swap-button" title="Swap Languages">
+                            <iconify-icon icon="mdi:swap-horizontal"></iconify-icon>
+                        </button>
+                    </div>
+
+                    <!-- Target Language Panel -->
+                    <div class="language-panel">
+                        <div class="language-selector">
+                            <select id="targetLanguage" class="language-dropdown">
+                                <option value="fil">Filipino</option>
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="zh">Chinese</option>
+                                <option value="ru">Russian</option>
+                                <option value="ar">Arabic</option>
+                                <option value="hi">Hindi</option>
+                                <option value="id">Indonesian</option>
+                                <option value="th">Thai</option>
+                                <option value="vi">Vietnamese</option>
+                                <option value="nl">Dutch</option>
+                                <option value="el">Greek</option>
+                                <option value="tr">Turkish</option>
+                                <option value="sv">Swedish</option>
+                            </select>
+                        </div>
+                        <div class="text-area-container">
+                            <div class="text-area-wrapper">
+                                <textarea 
+                                    id="targetText" 
+                                    class="text-area text-area-output" 
+                                    placeholder="Translation will appear here..."
+                                    rows="8"
+                                    readonly
+                                ></textarea>
+                                <div class="text-controls">
+                                    <button id="targetSpeaker" class="control-btn speaker-btn" title="Listen to Translation">
+                                        <iconify-icon icon="mdi:volume-high"></iconify-icon>
+                                    </button>
+                                    <button id="targetCopy" class="control-btn copy-btn" title="Copy Translation">
+                                        <iconify-icon icon="mdi:content-copy"></iconify-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Language Learning (Display Only) -->
+            <section id="section-learning" class="feature-container" style="display: none;">
+                <div class="feature-box">
+                    <h2 class="feature-title">Language Learning</h2>
+                    <p class="feature-subtitle">Practice prompts and curated lessons (display only)</p>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Common Phrases</h3>
+                            <ul>
+                                <li>Hello → Kumusta</li>
+                                <li>Thank you → Salamat</li>
+                                <li>Good morning → Magandang umaga</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Numbers</h3>
+                            <ul>
+                                <li>One → Isa</li>
+                                <li>Two → Dalawa</li>
+                                <li>Three → Tatlo</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Greetings</h3>
+                            <ul>
+                                <li>How are you? → Kumusta ka?</li>
+                                <li>Good evening → Magandang gabi</li>
+                                <li>Good night → Magandang gabi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dictionary (Display Only) -->
+            <section id="section-dictionary" class="feature-container" style="display: none;">
+                <div class="feature-box">
+                    <h2 class="feature-title">Dictionary</h2>
+                    <p class="feature-subtitle">Type a word to look up (display only)</p>
+                    <div class="dictionary-layout">
+                        <div class="dictionary-search">
+                            <input class="dict-input" type="text" placeholder="Enter a word..." disabled>
+                            <button class="dict-button" disabled>Search</button>
+                        </div>
+                        <div class="dictionary-results">
+                            <div class="dict-card">
+                                <h3>Example Entry</h3>
+                                <p><strong>Word:</strong> Hello</p>
+                                <p><strong>Part of Speech:</strong> interjection</p>
+                                <p><strong>Definition:</strong> A greeting or expression of goodwill.</p>
+                                <p><strong>Example:</strong> Hello, how are you?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Me (Display Only) -->
+            <section id="section-quiz" class="feature-container" style="display: none;">
+                <div class="feature-box">
+                    <h2 class="feature-title">Quiz Me</h2>
+                    <p class="feature-subtitle">Multiple choice practice (display only)</p>
+                    <div class="quiz-wrapper">
+                        <div class="quiz-card">
+                            <p class="quiz-question">Translate: "Thank you"</p>
+                            <ul class="quiz-options">
+                                <li><label><input type="radio" name="q1" disabled> Paalam</label></li>
+                                <li><label><input type="radio" name="q1" disabled> Salamat</label></li>
+                                <li><label><input type="radio" name="q1" disabled> Kumusta</label></li>
+                            </ul>
+                            <button class="quiz-button" disabled>Submit</button>
+                        </div>
+                        <div class="quiz-card">
+                            <p class="quiz-question">Translate: "Good morning"</p>
+                            <ul class="quiz-options">
+                                <li><label><input type="radio" name="q2" disabled> Magandang umaga</label></li>
+                                <li><label><input type="radio" name="q2" disabled> Magandang gabi</label></li>
+                                <li><label><input type="radio" name="q2" disabled> Magandang hapon</label></li>
+                            </ul>
+                            <button class="quiz-button" disabled>Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+    </div>
+
+    <!-- Loading and Error Messages -->
+    <div id="loadingMessage" class="message loading-message" style="display: none;">
+        <iconify-icon icon="mdi:loading" class="spinning"></iconify-icon>
+        <span>Translating...</span>
+    </div>
+
+    <div id="errorMessage" class="message error-message" style="display: none;">
+        <iconify-icon icon="mdi:alert-circle"></iconify-icon>
+        <span id="errorText">Could not fetch data. Please try again.</span>
+    </div>
+
+    <script src="/assets/js/translator.js"></script>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
+
+

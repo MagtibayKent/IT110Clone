@@ -1,0 +1,481 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 108px;
+  background: #e5e1dc;
+}
+
+.what-we-do-bg {
+  position: relative;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 450px;
+  color: #e5e1dc;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background: black;
+  letter-spacing: -25px;
+}
+.what-we-do-bg .top {
+  position: absolute;
+  top: -92px;
+  right: 18px;
+}
+.what-we-do-bg .middle {
+  position: absolute;
+  top: 230px;
+  right: 850px;
+}
+.what-we-do-bg .bottom {
+  position: absolute;
+  top: 385px;
+  bottom: 0;
+  right: 33px;
+}
+
+/* Development Team Section */
+.development-team {
+  text-align: center;
+  color: black;
+  width: 100%;
+  height: 1250px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: #e5e1dc;
+}
+
+.bg-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+.top-bg {
+  position: absolute;
+  top: -90px;
+  right: 40px;
+  color: transparent;
+  font-size: 450px;
+  -webkit-text-stroke: 3px #4d4ef8; /* Creates the outline */
+  letter-spacing: -46px;
+  opacity: 0.2;
+}
+
+.middle-bg {
+  position: absolute;
+  top: 280px;
+  right: 750px;
+  font-size: 550px;
+  color: #4d4ef8;
+  color: transparent; /* Makes the fill transparent */
+  -webkit-text-stroke: 3px #4d4ef8; /* Creates the outline */
+  letter-spacing: -38px;
+  opacity: 0.2;
+}
+
+.bottom-bg {
+  position: absolute;
+  bottom: -125px;
+  right: 10px;
+  font-size: 550px;
+  color: transparent;
+  -webkit-text-stroke: 4px #4d4ef8; /* Creates the outline */
+  opacity: 0.2;
+  letter-spacing: -38px;
+}
+
+.team-title {
+  font-size: 2.5em;
+  margin-top: 40px;
+  font-family: "Arial Black", Arial, sans-serif;
+  letter-spacing: 2px;
+}
+.team-description {
+  font-size: 2.2em;
+  margin: 10px 0 30px 0;
+  color: #555;
+}
+
+.dev-container {
+  display: flex;
+  position: relative;
+  width: 200px;
+  height: 280px;
+  background: linear-gradient(to bottom, #1976d2 0%, #222 100%);
+  margin: 40px 20px 30px 20px;
+}
+
+.dev-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%; /* Covers more of the bottom */
+  background: linear-gradient(
+    to top,
+    rgba(34, 34, 34, 0.85) 10%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mr-orias {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 80%;
+}
+
+.mr-arado {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 80%;
+}
+
+.dev-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.dev-img {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  filter: grayscale(100%);
+  bottom: 0;
+  object-fit: cover;
+}
+
+.dev-orias {
+  height: 124%;
+  bottom: -1%;
+}
+
+.dev-arado {
+  height: 139%;
+  bottom: -9%;
+}
+
+.dev-name {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  color: white;
+  z-index: 2;
+}
+
+.dev-desc {
+  position: absolute;
+  font-size: 28px;
+  color: #222;
+  width: 700px;
+  text-align: justify;
+  padding: 20px;
+}
+
+.desc-orias {
+  left: -700px;
+  top: 50px;
+}
+
+.desc-magtibay {
+  left: 220px;
+  top: 50px;
+}
+
+.desc-arado {
+  left: -700px;
+  top: 50px;
+}
+
+/* Our Team Section */
+.our_team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #181616;
+  height: 600px;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* space between cards */
+}
+
+.container {
+  margin: 40px 20px 30px 20px;
+  position: relative;
+  border: 1px solid black;
+  width: 200px;
+  height: 280px;
+  background: linear-gradient(to bottom, #1976d2 0%, #222 100%);
+  font-family: Arial, sans-serif;
+}
+.container::before {
+  position: absolute;
+  top: -20px;
+  left: 3px;
+  color: white;
+  font-style: italic;
+  font-size: 14px;
+  z-index: 1;
+  letter-spacing: -1px;
+  font-family: "Arial Black", Arial, sans-serif;
+  opacity: 0.8;
+}
+
+.container.uiux::before {
+  content: "UI/UX Designer";
+}
+.container.frontend::before {
+  content: "Frontend Developer";
+}
+
+.container.api::before {
+  content: "API Integration";
+}
+.container.js::before {
+  content: "JavaScript Logic";
+}
+.container.pm::before {
+  content: "Project Manager";
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%; /* Covers more of the bottom */
+  background: linear-gradient(
+    to top,
+    rgba(34, 34, 34, 0.85) 10%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.profile-img {
+  filter: grayscale(100%);
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  position: absolute;
+  top: -20%;
+  display: block;
+  z-index: 0;
+}
+
+.container:nth-child(1) img {
+  height: 129%;
+  width: 105%;
+}
+
+.name-block {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  color: white;
+  z-index: 2;
+}
+.team-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.team-header h1 {
+  color: #f5f5f5;
+  font-size: 3em;
+  font-family: "Arial Black", Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.team-header p {
+  color: #ccc;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.cta-section {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background: black;
+  font-size: 2em;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2.4em;
+  margin-bottom: 20px;
+  font-family: "Arial Black", Arial, sans-serif;
+  letter-spacing: 2px;
+}
+.cta-button {
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1em;
+  border-radius: 20px;
+}
+.cta-section a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .what-we-do-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    height: auto;
+  }
+  .what-we-do-bg .top,
+  .what-we-do-bg .middle,
+  .what-we-do-bg .bottom {
+    position: static;
+    font-size: 3em;
+    text-align: center;
+    margin: 10px 0;
+    letter-spacing: 0;
+  }
+
+  .dev.container {
+    text-align: justify;
+  }
+
+  .dev-container::after {
+    display: none;
+  }
+
+  .dev-img {
+    filter: none;
+  }
+
+  .our_team {
+    height: auto;
+  }
+  .development-team {
+    height: auto;
+    padding: 20px 0;
+  }
+  .dev-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .dev-container {
+    width: 200px;
+    max-width: 400px;
+    height: auto;
+    margin: 30px auto;
+    flex-direction: column;
+    background: #e5e1dc;
+  }
+  .dev-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    top: 0;
+  }
+  .dev-name {
+    position: static;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .dev-desc {
+    position: static;
+    width: 200%;
+    font-size: 1.6em;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: auto;
+    font-size: 2.5em;
+    padding: 40px 20px;
+  }
+
+  .dev-img {
+    filter: none;
+  }
+
+  .bg-text {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+  .dev.container {
+    text-align: justify;
+  }
+
+  .dev-container::after {
+    display: none;
+  }
+  .team-title {
+    font-size: 1.5em;
+  }
+  .team-description {
+    font-size: 1em;
+  }
+  .dev-container {
+    max-width: 95vw;
+    margin: 20px auto;
+  }
+  .dev-desc {
+    font-size: 1em;
+    padding: 5px 0;
+  }
+
+  .what-we-do-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    height: auto;
+  }
+  .what-we-do-bg .top,
+  .what-we-do-bg .middle,
+  .what-we-do-bg .bottom {
+    position: static;
+    font-size: 2em;
+    text-align: center;
+    margin: 10px 0;
+    letter-spacing: 0;
+  }
+}
